@@ -1,0 +1,17 @@
+{
+	"default": {
+		"app": "template",
+		"version": "1.0.0"
+	},
+	"dev": {
+		"stage": "dev",
+		"memcached": ["memcachedtest.ophlcj.0001.apse2.cache.amazonaws.com:11211"]
+	},
+	"test": {
+		"stage": "test"
+	},
+	"prod": {
+		"stage": "prod"
+	}
+
+}

@@ -6,12 +6,15 @@ service: my-serverless-express-application
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
+  stage: $(opt:stage, 'dev')
   region: ap-southeast-2
+  environment:
+    stage: ${opt:stage, 'dev'}
+    
 
 functions:
   app:
-    handler: index.handler
+    handler: app.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
