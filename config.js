@@ -9,7 +9,6 @@
     const stageConfig = config[stage];
     const mergedConfig = _.merge(defaultConfig, stageConfig);
 
-    console.log(stageConfig);
     //add to global config
     global.appConfig = mergedConfig;
 

@@ -6,6 +6,9 @@
 const serverless = require('serverless-http');
 const express = require('express');
 const config = require('./config');
+const logger = require('./logger');
+//const logger = new Logger().getInstance();
+
 const app = express();
 
 var Memcached = require('memcached');
@@ -22,6 +25,7 @@ app.get('/add', function (req, res) {
     }
     else {
         console.log("memcache callback blt");
+        winston.
         console.log(result);
         res.send(`Hello World!!! ${result}`);
     }
@@ -46,7 +50,8 @@ app.get('/get', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-    let jsonstring = JSON.stringify(global.appConfig);
+    let jsonstring = JSON.stringify(global.appConfig);    
+    logger.info('test logger');
     res.send(`${jsonstring})`);
 
 });
