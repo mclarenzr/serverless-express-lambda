@@ -1,17 +1,25 @@
 {
 	"default": {
 		"app": "template",
-		"version": "1.0.0"
+		"version": "1.0.0",
+		"loglevel": "debug"
+	},
+	"local" : {
+		"stage": "local",
+		"memcached": ["localhost:11211"]
 	},
 	"dev": {
 		"stage": "dev",
 		"memcached": ["memcachedtest.ophlcj.0001.apse2.cache.amazonaws.com:11211"]
 	},
 	"test": {
-		"stage": "test"
+		"stage": "test",
+		"memcached": ["todo:11211"]
 	},
 	"prod": {
-		"stage": "prod"
+		"stage": "prod",
+		"loglevel": "info",
+		"memcached": ["todo:11211"]
 	}
 
 }
